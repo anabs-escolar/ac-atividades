@@ -1,2 +1,3 @@
-# ac-atividades
-Arquitetura de Computadores, TADS 2025
+# Atividades de Arquitetura de Computadores
+
+
