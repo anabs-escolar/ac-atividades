@@ -1,0 +1,62 @@
+.text
+main:
+	addi $2, $0, 5
+	syscall
+	add $8, $0, $2	# a
+	
+	addi $2, $0, 5
+	syscall
+	add $9, $0, $2 	# b
+	
+	addi $2, $0, 5
+	syscall
+	add $10, $0, $2	# c
+		
+	# a = b
+	# b = c
+	
+	beq $8, $9, nao
+	beq $9, $10, nao
+	
+	# a<b 
+	
+	slt $11, $8, $9		# a<b, SE NAO negativo
+	beq $11, $0, negativo
+	
+	# SE a<b, ENTAO b>c
+	
+	slt $11, $10, $9	# c<b, SE NAO invalido
+	beq $11, $0, nao
+			
+	addi $4, $0, '+'
+	addi $2, $0, 11
+	syscall
+	
+	addi $4, $0, 'P'
+	j print
+
+
+negativo:
+	# SE (a > b) ENTAO (b < c)
+	
+	slt $11, $9, $10	# b < c, SE NAO invalido
+	beq $11, $0, nao
+	
+	addi $4, $0, '-'
+	addi $2, $0, 11
+	syscall
+	
+	addi $4, $0, 'P'
+	j print
+
+nao:	# nao valido
+	addi $4, $0, 'N'
+	
+print: 
+	addi $2, $0, 11
+	syscall
+
+fim:
+	addi $2, $0, 10
+	syscall
+	
