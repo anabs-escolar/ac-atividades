@@ -5,8 +5,8 @@ main:	addi $2, $0, 5
 	add $8, $0, $2		# n
 
 	addi $11, $0, 0		# contador = 0
-    	addi $10, $0, -1       	# maior = 0
-    	addi $14, $0, 1       	# i = 0
+    	addi $10, $0, -1       	# maior = -1
+    	addi $14, $0, 1       	# i = 1
 
 loop:	addi $2, $0, 5
 	syscall
