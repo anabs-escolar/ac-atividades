@@ -14,11 +14,11 @@ int main() {
     int pos = 0;
     int qtd = 1;
     for (int i = 0; i < n; i++) {
-        cout << "i"<< i<< endl;
+        // cout << "i"<< i<< endl;
         int soma = vet[i];
         int a_qtd = 1;
         for (int j = i+1; j < n; j++){
-            cout << "j" << j << endl;
+            // cout << "j" << j << endl;
             soma = soma + vet[j];
             a_qtd++;
             if (soma > maior_soma) {
@@ -28,9 +28,9 @@ int main() {
             }
         }
     }
-    cout << maior_soma;
-    cout << pos;
-    cout << qtd;
+    cout << maior_soma << endl;
+    cout << pos << endl;
+    cout << qtd << endl;
     //cout << vet[pos] << "+" << vet[pos + 1] << "=" << maior_soma << endl;
     // cout << "p" << pos + 1 << endl; // posição começando em 1
     return 0;
